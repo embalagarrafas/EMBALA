@@ -1,0 +1,16 @@
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+.reels-video {
+  /* ADICIONE ISSO PARA O TESTE: */
+  border: 10px solid red; 
+
+  /* O resto do seu código */
+  max-width: 400px;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 8px;
+}

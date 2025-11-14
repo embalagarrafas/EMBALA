@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBALA - Inovação em Garrafas PEAD</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Configuração de Cores Customizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'embala-blue': '#0A2A4E', // Azul escuro profundo
+                        'embala-red': '#E60023',   // Vermelho vibrante
+                        'embala-gray': '#333333', // Cinza escuro para texto
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilo base para a página */
+        body {
+            font-family: 'inter', sans-serif;
+            color: #333;
+        }
+        /* Efeito de sombra sutil para a barra de navegação flutuante */
+        .sticky-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- ===== 1. Barra de Navegação Flutuante/Fixa ===== -->
+    <nav id="navbar" class="sticky top-0 z-50 w-full shadow-md sticky-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-10 w-10 rounded-full object-cover" src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/IMG_6975.jpg" alt="Logo EMBALA">
+                </div>
+                
+                <!-- Links de Navegação (Desktop) -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="font-medium text-embala-gray hover:text-embala-red transition-colors">Home</a>
+                    <a href="#produtos" class="font-medium text-embala-gray hover:text-embala-red transition-colors">Nossos Produtos</a>
+                    <a href="#historia" class="font-medium text-embala-gray hover:text-embala-red transition-colors">Nossa História</a>
+                    <a href="#aplicacoes" class="font-medium text-embala-gray hover:text-embala-red transition-colors">Aplicações</a>
+                    <a href="#contato" class="font-medium text-embala-gray hover:text-embala-red transition-colors">Contato</a>
+                </div>
+                
+                <!-- Ícones de Redes Sociais (Desktop) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://api.whatsapp.com/send/?phone=5599982360191&text&type=phone_number&app_absent=0" target="_blank" class="text-embala-gray hover:text-embala-blue" aria-label="WhatsApp">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.88-1.587-5.946.001-6.556 5.333-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.335 11.89-11.892 11.89-1.99-.001-3.956-.5-5.688-1.448L.057 24zm6.591-3.803c1.645.977 3.52 1.516 5.436 1.516 5.487 0 9.94-4.453 9.94-9.94s-4.453-9.94-9.94-9.94-9.94 4.453-9.94 9.94c0 2.006.58 3.91 1.64 5.594L5.07 19.108l1.578 1.089z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/embalaitz/" target="_blank" class="text-embala-gray hover:text-embala-blue" aria-label="Instagram">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.28-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.28.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.28-.059-1.689-.073-4.948-.073z"/><path d="M12 6.865c-2.822 0-5.135 2.313-5.135 5.135s2.313 5.135 5.135 5.135 5.135-2.313 5.135-5.135-2.313-5.135-5.135-5.135zm0 8.27c-1.728 0-3.135-1.407-3.135-3.135s1.407-3.135 3.135-3.135 3.135 1.407 3.135 3.135-1.407 3.135-3.135 3.135zm4.885-8.41c-.606 0-1.096.49-1.096 1.096s.49 1.096 1.096 1.096 1.096-.49 1.096-1.096-.49-1.096-1.096-1.096z"/></svg>
+                    </a>
+                </div>
+                
+                <!-- Botão de Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-embala-gray" aria-label="Abrir menu">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== 2. Seção Hero (Acima da Dobra) ===== -->
+    <section id="home" class="relative min-h-[calc(100vh-64px)] flex items-center justify-center text-center text-white p-8 overflow-hidden bg-embala-blue">
+        <!-- Fundo fluido sutil (gradiente) -->
+        <div class="absolute inset-0 bg-gradient-to-br from-embala-blue via-blue-950 to-black opacity-80 z-0"></div>
+        
+        <!-- Conteúdo do Hero -->
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            
+            <!-- Logo Prominente -->
+            <img src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/IMG_6975.jpg" alt="Logo EMBALA" class="w-64 h-64 md:w-80 md:h-80 rounded-full mb-8 object-cover">
+            
+            <!-- Título Principal -->
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight">
+                INOVAÇÃO EM EMBALAGENS: A GARRAFA PERFEITA PARA O SEU SUCESSO.
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-200 font-light mb-6">
+                Descubra a Qualidade que Transforma seu Produto.
+            </p>
+            
+            <!-- Subtítulo -->
+            <p class="text-lg md:text-xl text-blue-200 mb-10 max-w-2xl">
+                Soluções versáteis e seguras em PEAD para laticínios, sucos, mel e muito mais.
+            </p>
+            
+            <!-- Botão CTA -->
+            <a href="https://api.whatsapp.com/send/?phone=5599982360191&text&type=phone_number&app_absent=0" class="bg-embala-red text-white font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-red-700">
+                Solicite seu Orçamento Agora!
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== 3. Seção "Nossos Produtos" (Vitrine) ===== -->
+    <section id="produtos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-embala-blue text-center mb-16">
+                CONHEÇA NOSSA LINHA EXCLUSIVA DE GARRAFAS PEAD
+            </h2>
+            
+            <!-- Grid de Produtos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                 <!-- Produto 1: 140ml -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.03] group">
+                    <img class="w-full h-72 object-cover" src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/Gemini_Generated_Image_rwteinrwteinrwte.png" alt="Garrafa PEAD 950ml">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-embala-gray mb-2">Garrafa PEAD 140ml</h3>
+                        <p class="text-gray-600 mb-6">Excelente para amostras ou produtos premium. Design ergonômico.</p>
+                        <a href="#" class="inline-block bg-embala-red text-white text-sm font-bold py-3 px-6 rounded-lg uppercase transition-colors duration-300 hover:bg-red-700 group-hover:bg-embala-blue">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Produto 2: 200ml -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.03] group">
+                    <img class="w-full h-72 object-cover" src="https://uploads.onecompiler.io/4443f7ggu/444kb8t7b/Gemini_Generated_Image_t2703dt2703dt270.png" alt="Garrafa PEAD 200ml">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-embala-gray mb-2">Garrafa PEAD 200ml</h3>
+                        <p class="text-gray-600 mb-6">Ideal para mel, molhos especiais ou amostras. Design compacto e vedação segura.</p>
+                        <a href="#" class="inline-block bg-embala-red text-white text-sm font-bold py-3 px-6 rounded-lg uppercase transition-colors duration-300 hover:bg-red-700 group-hover:bg-embala-blue">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Produto 3: 300ml -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.03] group">
+                    <img class="w-full h-72 object-cover" src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/Gemini_Generated_Image_nwy8ganwy8ganwy8.png" alt="Garrafa PEAD 300ml">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-embala-gray mb-2">Garrafa PEAD 300ml</h3>
+                        <p class="text-gray-600 mb-6">Perfeita para sucos naturais, água de coco e doses individuais de iogurte.</p>
+                        <a href="#" class="inline-block bg-embala-red text-white text-sm font-bold py-3 px-6 rounded-lg uppercase transition-colors duration-300 hover:bg-red-700 group-hover:bg-embala-blue">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+                
+                 <!-- Produto 4: 450ml -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.03] group">
+                    <img class="w-full h-72 object-cover" src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/Gemini_Generated_Image_8i8hfu8i8hfu8i8h.png" alt="Garrafa PEAD 450ml">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-embala-gray mb-2">Garrafa PEAD 450ml</h3>
+                        <p class="text-gray-600 mb-6">Design diferenciado, versátil para água de coco, iogurte e leite.</p>
+                        <a href="#" class="inline-block bg-embala-red text-white text-sm font-bold py-3 px-6 rounded-lg uppercase transition-colors duration-300 hover:bg-red-700 group-hover:bg-embala-blue">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Produto 5: 500ml -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.03] group">
+                    <img class="w-full h-72 object-cover" src="https://uploads.onecompiler.io/4443f7ggu/444kb8t7b/Gemini_Generated_Image_99dze799dze799dz.png" alt="Garrafa PEAD 500ml">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-embala-gray mb-2">Garrafa PEAD 500ml</h3>
+                        <p class="text-gray-600 mb-6">Tamanho versátil para sucos, leites e produtos de limpeza leves.</p>
+                        <a href="#" class="inline-block bg-embala-red text-white text-sm font-bold py-3 px-6 rounded-lg uppercase transition-colors duration-300 hover:bg-red-700 group-hover:bg-embala-blue">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Produto 6: 1000ml -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.03] group">
+                    <img class="w-full h-72 object-cover" src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/Gemini_Generated_Image_q0yuu0q0yuu0q0yu.png" alt="Garrafa PEAD 1000ml">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-embala-gray mb-2">Garrafa PEAD 1000ml</h3>
+                        <p class="text-gray-600 mb-6">A escolha clássica para leite, sucos de família e produtos de limpeza.</p>
+                        <a href="#" class="inline-block bg-embala-red text-white text-sm font-bold py-3 px-6 rounded-lg uppercase transition-colors duration-300 hover:bg-red-700 group-hover:bg-embala-blue">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. Seção "Nossa História" e "Vídeo Institucional" ===== -->
+    <section id="historia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Coluna da Esquerda (Nossa História) -->
+                <div class="pr-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-embala-blue mb-6">
+                        EMBALA: INOVAÇÃO E CONFIANÇA DESDE [Ano de Fundação]
+                    </h2>
+                    <div class="space-y-4 text-gray-700 text-base leading-relaxed">
+                        <p>
+                            Fundada com a missão de revolucionar o mercado de embalagens, a EMBALA tornou-se sinônimo de qualidade e confiabilidade em soluções de PEAD.
+                        </p>
+                        <p>
+                            Nosso compromisso vai além da fabricação. Investimos constantemente em tecnologia e processos sustentáveis para garantir que seu produto chegue ao consumidor final com a máxima segurança e integridade.
+                        </p>
+                        <p>
+                            Valorizamos a parceria com nossos clientes, entendendo suas necessidades para entregar não apenas uma garrafa, mas uma solução completa que agrega valor à sua marca.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Coluna da Direita (Vídeo Institucional - Formato Reels) -->
+                <div class="flex justify-center items-center">
+                    <div class="relative w-full max-w-[300px] aspect-[9/16] rounded-2xl shadow-2xl overflow-hidden border-4 border-gray-200">
+                        <!-- Placeholder do Vídeo -->
+                   <div style="position:relative; width:100%; height:0px; padding-bottom:177.778%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/81vc31?autoplay=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 5. Seção "Aplicações e Versatilidade" ===== -->
+    <section id="aplicacoes" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-embala-blue mb-4">
+                VERSATILIDADE QUE IMPULSIONA SEU NEGÓCIO
+            </h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-16">
+                Nossas embalagens PEAD são projetadas para atender aos mais altos padrões de durabilidade, segurança alimentar e design, adaptando-se perfeitamente a diversas indústrias.
+            </p>
+            
+            <!-- Grid de Ícones de Aplicação -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                
+                <!-- Aplicação 1: Laticínios -->
+                <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0 bg-white shadow-lg rounded-full p-5 mb-5 border-4 border-embala-blue">
+                        <svg class="h-10 w-10 text-embala-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-embala-gray mb-2">Laticínios</h3>
+                    <p class="text-gray-600">Perfeitas para iogurtes, leites, bebidas lácteas e achocolatados.</p>
+                </div>
+                
+                <!-- Aplicação 2: Sucos e Bebidas -->
+                <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0 bg-white shadow-lg rounded-full p-5 mb-5 border-4 border-embala-blue">
+                        <svg class="h-10 w-10 text-embala-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-embala-gray mb-2">Sucos e Água de Coco</h3>
+                    <p class="text-gray-600">Material resistente que preserva o frescor e o sabor da bebida.</p>
+                </div>
+
+                <!-- Aplicação 3: Mel e Molhos -->
+                <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0 bg-white shadow-lg rounded-full p-5 mb-5 border-4 border-embala-blue">
+                        <svg class="h-10 w-10 text-embala-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.549l-2.368-.662a2 2 0 01-1.522-.662l-1.179-1.179a2 2 0 00-2.828 0l-1.179 1.179a2 2 0 01-1.522.662l-2.368.662a2 2 0 00-1.022.549m13.522 0l-1.179 1.179a2 2 0 01-2.828 0l-1.179-1.179m6.186 0l-1.179 1.179a2 2 0 01-2.828 0l-1.179-1.179M3 10c0-2.091 1.609-3.791 3.791-3.791h1.362c.427 0 .841-.17 1.155-.485l1.501-1.501a2 2 0 012.828 0l1.501 1.501c.314.315.728.485 1.155.485h1.362C19.391 6.209 21 7.909 21 10v4a2 2 0 01-2 2h-1"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-embala-gray mb-2">Mel e Molhos</h3>
+                    <p class="text-gray-600">Design que facilita o manuseio e oferece excelente barreira de proteção.</p>
+                </div>
+
+                <!-- Aplicação 4: Outros (Limpeza/Cosméticos) -->
+                <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0 bg-white shadow-lg rounded-full p-5 mb-5 border-4 border-embala-blue">
+                        <svg class="h-10 w-10 text-embala-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h6m-6 4h6m-6 4h6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-embala-gray mb-2">Produtos Químicos</h3>
+                    <p class="text-gray-600">PEAD de alta densidade para produtos de limpeza, cosméticos e mais.</p>
+                </div>
+            </div>
+            
+            <!-- CTA Secundário -->
+            <a href="#produtos" class="mt-16 inline-block text-embala-blue font-bold text-lg transition-colors hover:text-embala-red">
+                ENCONTRE A EMBALAGEM IDEAL PARA SEU PRODUTO &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== 6. Seção "Chamada para Ação Final" (CTA Apelativa) ===== -->
+    <section id="contato" class="py-24 bg-embala-red">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                PRONTO PARA ELEVAR O NÍVEL DA SUA MARCA?
+            </h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                Junte-se a clientes satisfeitos que confiam na EMBALA para soluções de embalagem superiores. Qualidade, inovação e o melhor custo-benefício para o seu negócio.
+            </p>
+            <a href="#" class="bg-white text-embala-blue font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100">
+                Fale com Nossos Especialistas Agora!
+            </a>
+        </div>
+    </section>
+    
+    <!-- ===== 7. Rodapé ===== -->
+    <footer class="bg-embala-blue text-blue-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                
+                <!-- Logo e Copyright -->
+                <div class="flex-shrink-0 flex flex-col items-center md:items-start">
+                    <img class="h-10 w-10 rounded-full object-cover mb-2" src="https://uploads.onecompiler.io/4443f7ggu/4443qnm2z/IMG_6975.jpg" alt="Logo EMBALA">
+                    <p class="text-sm text-blue-300">&copy; 2024 EMBALA. Todos os direitos reservados.</p>
+                </div>
+                
+                <!-- Links Rápidos -->
+                <div class="flex flex-wrap justify-center space-x-6">
+                    <a href="#produtos" class="text-sm hover:text-white transition-colors">Produtos</a>
+                    <a href="#historia" class="text-sm hover:text-white transition-colors">Nossa História</a>
+                    <a href="#" class="text-sm hover:text-white transition-colors">Política de Privacidade</a>
+                    <a href="#" class="text-sm hover:text-white transition-colors">Termos de Uso</a>
+                </div>
+                
+                <!-- Ícones de Redes Sociais -->
+                <div class="flex items-center space-x-5">
+                    <a href="https://api.whatsapp.com/send/?phone=5599982360191&text&type=phone_number&app_absent=0" target="_blank" class="text-blue-200 hover:text-white" aria-label="WhatsApp">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.88-1.587-5.946.001-6.556 5.333-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.335 11.89-11.892 11.89-1.99-.001-3.956-.5-5.688-1.448L.057 24zm6.591-3.803c1.645.977 3.52 1.516 5.436 1.516 5.487 0 9.94-4.453 9.94-9.94s-4.453-9.94-9.94-9.94-9.94 4.453-9.94 9.94c0 2.006.58 3.91 1.64 5.594L5.07 19.108l1.578 1.089z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/embalaitz/" target="_blank" class="text-blue-200 hover:text-white" aria-label="Instagram">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.28-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.28.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.28-.059-1.689-.073-4.948-.073z"/><path d="M12 6.865c-2.822 0-5.135 2.313-5.135 5.135s2.313 5.135 5.135 5.135 5.135-2.313 5.135-5.135-2.313-5.135-5.135-5.135zm0 8.27c-1.728 0-3.135-1.407-3.135-3.135s1.407-3.135 3.135-3.135 3.135 1.407 3.135 3.135-1.407 3.135-3.135 3.135zm4.885-8.41c-.606 0-1.096.49-1.096 1.096s.49 1.096 1.096 1.096 1.096-.49 1.096-1.096-.49-1.096-1.096-1.096z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
